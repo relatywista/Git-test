@@ -1,0 +1,17 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/images/*", "/assets/*", "/*.{css,js,png,jpg,svg,ico,html}"]
+  },
+  "routes": [
+    { "route": "/polityka-prywatnosci", "rewrite": "/polityka-prywatnosci.html" },
+    { "route": "/privacy-policy", "rewrite": "/polityka-prywatnosci.html?lang=en" }
+  ],
+  "globalHeaders": {
+    "X-Frame-Options": "SAMEORIGIN",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "geolocation=(), microphone=(), camera=()",
+    "Cache-Control": "no-store"
+  }
+}

@@ -1,0 +1,4 @@
+Contact: mailto:info@aitelier.eu
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: pl, en
+Policy: https://www.aitelier.com.pl/

@@ -1,0 +1,203 @@
+/* ========= AITelier — STYLE (brand: wizytówka pastel) ========= */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Belleza&family=Benedicte&display=swap');
+
+
+/* Paleta z wizytówki */
+:root{
+  --brand:#5a636d;  /* główny kolor tekstu */
+  --headerc:#932d35;  /* kolor naglowkow h1ih2*/
+  --feece6:#feece6; /* jasny różowo-beżowy */
+  --fbf1e7:#fbf1e7; /* jasny kremowy     */
+  --feede6:#feede6; /* pastelowy róż     */
+  --e4d5ce:#e4d5ce; /* ciepły szary      */
+  --fdebe6:#fdebe6; /* lekko brzoskwiniowy */
+  --fcf3e7:#fcf3e7; /* bardzo jasny beż  */
+  --accent:#b85c3c; /* akcent            */
+  --ink:#1f2328;    /* kolor tekstu      */
+}
+
+/* Baza */
+*{ box-sizing: border-box }
+html, body{ margin:0; height:100% }
+
+/* Delikatne pastelowe tło strony (poza hero) */
+body{
+  background: linear-gradient(160deg, var(--feece6), var(--fbf1e7), var(--fcf3e7));
+  color: var(--ink);
+  font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Layout ogólny */
+.wrap{ max-width:1100px; margin:0 auto; padding:22px }
+
+/* ---------- Topbar ---------- */
+.topbar{
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(6px) saturate(115%);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  margin-bottom: 0; /* brak dodatkowej przerwy pod menu */
+}
+.brand{ display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink) }
+.logo{ width:80px; height:80px; border-radius:10px }
+.brand-name{ font-weight:800 }
+.nav{ display:flex; align-items:center; gap:14px }
+.nav a{
+  text-decoration:none; color:#2a2a2a; padding:8px 10px; border-radius:10px;
+}
+.nav a:hover{ background: rgba(0,0,0,.06) }
+.nav .accent{ background:#fff; border:1px solid rgba(0,0,0,.08) }
+.lang{
+  margin-left:6px; border:1px solid rgba(0,0,0,.12); background:#fff;
+  padding:8px 12px; border-radius:10px; cursor:pointer;
+}
+
+/* ---------- HERO (obraz w tle + brak pustej przestrzeni) ---------- */
+.hero{
+  /* usuń „pustkę” nad sekcją */
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+
+  /* obraz tylko w hero, zaczyna się od samej góry */
+  background: url("images/aitelier-bg.png") center top / cover no-repeat;
+  min-height: 75vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  color: var(--ink);
+  position: relative;
+}
+
+/* Jeśli hero ma też klasę 'section', zerujemy sekcyjny padding */
+.hero.section{ padding-top: 0 !important; padding-bottom: 0 !important; }
+
+/* Zerujemy padding .wrap wewnątrz hero (to robiło wizualną „dziurę”) */
+.hero .wrap{ padding-top: 0; padding-bottom: 0 }
+
+/* Overlay dla czytelności tekstu */
+.hero::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(254, 236, 230, 0.28); /* bardzo delikatny overlay */
+  z-index: 0;
+}
+.hero > *{ position: relative; z-index: 1 }
+
+/* Nagłówki i brand */
+h1, h2, .brand-name {
+  font-family: 'Belleza', sans-serif;
+  color: var(--headerc);
+}
+h3, .brand-name {
+  font-family: 'Belleza', sans-serif;
+  color: var(--brand);
+}
+
+/* Tekst, menu, przyciski, akapity */
+body, p, .tagline, .lead, .nav a, .btn {
+  font-family: 'Benedicte', serif;
+  color: var(--brand);
+}
+
+h1{
+  font-size: clamp(34px, 5.8vw, 62px);
+  margin: 0 0 6px 0;            /* ważne: zero od góry */
+  letter-spacing: .2px;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+.tagline{
+  font-size: clamp(16px, 2.2vw, 20px);
+  color:#444;
+  margin: 6px 0 14px 0;
+}
+.cta{ display:flex; gap:12px; flex-wrap:wrap }
+.btn{
+  display:inline-block; padding:12px 18px; border-radius:12px;
+  text-decoration:none; font-weight:700; border:2px solid transparent;
+}
+.btn.primary{ background: var(--accent); color:#fff }
+.btn.ghost{
+  background: rgba(255,255,255,0.85);
+  color: var(--ink);
+  border-color: rgba(0,0,0,0.08);
+}
+
+/* ---------- Sekcje ---------- */
+.section{ padding: 44px 0 }
+.section-head{ margin-bottom: 10px }
+.badge{
+  display:inline-block; background: var(--e4d5ce);
+  padding:4px 10px; border-radius:999px; font-size:12px; color:#3a2b2b; margin-right:8px;
+}
+
+/* Sekcje półtransparentne (poza hero) */
+.section, .topbar, .footer{
+  background: rgba(255,255,255,0.50);
+  backdrop-filter: saturate(115%) blur(2px);
+}
+
+/* Grid kart usług */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap:18px; margin-top:16px;
+}
+.card{
+  background: rgba(255,255,255,0.75);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.05);
+  padding: 18px;
+}
+.card .icon{ width:42px; height:42px; margin-bottom:8px }
+.lead{ font-size: 18px; line-height: 1.55 }
+
+/* Formularz (embed Forms) */
+.forms-embed{
+  position: relative; padding-top: 56.25%;
+  border:1px solid rgba(0,0,0,.08); border-radius:12px; overflow:hidden; background:#fff;
+}
+.forms-embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0 }
+
+/* Stopka */
+.footer .wrap{
+  display:flex; gap:10px; align-items:center; justify-content:center;
+  border-top: 1px dashed rgba(0,0,0,.12);
+  padding-top:18px; margin-top:8px;
+}
+
+/* ---------- Dwujęzyczność ---------- */
+.i18n-en { display: none; }
+[data-lang="en"] .i18n-pl { display: none; }
+[data-lang="en"] .i18n-en { display: revert; }   /* nowoczesne przeglądarki */
+
+/* fallback, jeśli przeglądarka nie wspiera 'revert' */
+@supports not (display: revert) {
+  [data-lang="en"] .i18n-en { display: block; }
+  .nav .i18n-en, .nav .i18n-pl { display: inline; }
+}
+
+/* ---------- Responsywność ---------- */
+@media (max-width: 1024px){
+  /* mobilny „fixed” potrafi skakać — na mobile zostaw tło strony statyczne */
+  body{
+    background-attachment: scroll;
+    background-position: center top;
+  }
+}
+@media (max-width: 768px){
+  .hero{
+    min-height: 60vh;
+    padding: 12px;
+    background-position: center top; /* trzymaj górę obrazu widoczną */
+  }
+  h1{ font-size: clamp(28px, 7vw, 42px); }
+  .tagline{ font-size: clamp(14px, 4vw, 18px); }
+}

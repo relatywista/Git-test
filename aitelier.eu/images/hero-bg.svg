@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#feece6"></stop>
+      <stop offset="50%" stop-color="#fbf1e7"></stop>
+      <stop offset="100%" stop-color="#fcf3e7"></stop>
+    </linearGradient>
+    <radialGradient id="spot1" cx="20%" cy="15%" r="40%">
+      <stop offset="0%" stop-color="#feede6" stop-opacity="0.9"></stop>
+      <stop offset="100%" stop-color="#feede6" stop-opacity="0"></stop>
+    </radialGradient>
+    <radialGradient id="spot2" cx="80%" cy="75%" r="40%">
+      <stop offset="0%" stop-color="#fdebe6" stop-opacity="0.8"></stop>
+      <stop offset="100%" stop-color="#fdebe6" stop-opacity="0"></stop>
+    </radialGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#g1)"></rect>
+  <circle cx="280" cy="160" r="380" fill="url(#spot1)"></circle>
+  <circle cx="1240" cy="760" r="420" fill="url(#spot2)"></circle>
+  <g opacity="0.12" fill="#e4d5ce">
+    <circle cx="1400" cy="140" r="6"></circle>
+    <circle cx="120" cy="720" r="6"></circle>
+    <circle cx="820" cy="420" r="6"></circle>
+    <circle cx="420" cy="520" r="6"></circle>
+    <circle cx="1080" cy="240" r="6"></circle>
+  </g>
+</svg>
